@@ -93,7 +93,7 @@ body.mu .icon-logo {color:#333;}
 .nav p {color:#999;font-size:12px;position:absolute;width:100%;text-align:center;bottom:30px;}
 .nav p a {color:#999;text-decoration:underline;}
 .nav p:first-letter {font-family:sans-serif;}
-#container {padding-bottom:100px;overflow:hidden;position:relative;}
+#container {overflow:hidden;position:relative;}
 #container:before {content:'';display:block;width:1px;height:200%;position:absolute;left:50%;background:#eaeaea;top:-50%;z-index:0;}
 #primary {position:relative;}
 #single {background:#fff;position:relative;overflow-x:hidden;}
