@@ -1,0 +1,670 @@
+
+<!DOCTYPE html>
+<html lang="default" class="loading">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>My Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="这是Jassor的个人页面，使用强大的Hexo搭建。但不知道为什么，它在Jassor手中似乎有点low。"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="My Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">My Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="http://name-used.github.io"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">SpringCloud</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class="main">
+        <h1 class="title">SpringCloud</h1>
+        <div class="stuff">
+            <span>五月 10, 2019</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <h1 id="SpringCloud学习笔记"><a href="#SpringCloud学习笔记" class="headerlink" title="SpringCloud学习笔记"></a>SpringCloud学习笔记</h1><p>本文概述部分为个人理解,欢迎指正 <em><del>(反正评论不能用)</del></em></p>
+<h2 id="微服务是什么"><a href="#微服务是什么" class="headerlink" title="微服务是什么"></a>微服务是什么</h2><ul>
+<li>是一种软件架构</li>
+<li>是一族独立运行的小项目</li>
+<li>是单一应用程序的拆分</li>
+<li>满足以下关键词:<ul>
+<li>微型服务</li>
+<li>独立进程</li>
+<li>轻量交互</li>
+<li>独立部署 <em>(强调服务的启用不必依赖其它服务)</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="为什么微服务"><a href="#为什么微服务" class="headerlink" title="为什么微服务"></a>为什么微服务</h2><ul>
+<li>一个项目只做一件事<ul>
+<li>高内聚,松耦合</li>
+<li>聚焦业务逻辑</li>
+<li>减少代码量<ul>
+<li>Bug = (Code)^2</li>
+<li>小团队即可开发,降低管理成本</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>一个项目是具有功能意义的独立的服务<ul>
+<li>不要求开发语言一致</li>
+<li>某个项目触雷不影响其它项目的正常运行</li>
+<li>易于集成第三方实现自动部署</li>
+<li>允许更灵活的开发,如使用新技术</li>
+</ul>
+</li>
+</ul>
+<h2 id="微服务的缺点"><a href="#微服务的缺点" class="headerlink" title="微服务的缺点"></a>微服务的缺点</h2><ul>
+<li>分布式系统复杂性<ul>
+<li>系统部署依赖</li>
+<li>系统间通讯</li>
+<li>数据一致性</li>
+</ul>
+</li>
+<li>服务过多增加运维压力<ul>
+<li>系统集成测试</li>
+<li>性能监控</li>
+</ul>
+</li>
+</ul>
+<h2 id="微服务怎么做"><a href="#微服务怎么做" class="headerlink" title="微服务怎么做"></a>微服务怎么做</h2><ul>
+<li>服务治理<ul>
+<li>SpringCloud</li>
+<li>Dubbo</li>
+</ul>
+</li>
+<li>服务注册<ul>
+<li>Eureka -&gt; (高可用性,分区容错性)</li>
+<li>Zookeeper -&gt; (强一致性,分区容错性)</li>
+</ul>
+</li>
+<li>服务调用<ul>
+<li>restful-api</li>
+<li>remote-procedure-call</li>
+</ul>
+</li>
+<li>服务负载均衡 ((Load-Balance))<ul>
+<li>客户端负载均衡<ul>
+<li>Ribbon</li>
+<li>Feign</li>
+</ul>
+</li>
+<li>服务器端负载均衡<ul>
+<li>Nginx</li>
+<li>F5</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>服务监控<ul>
+<li>dashboard</li>
+</ul>
+</li>
+<li><em>~…(To Be Continue)…~</em></li>
+</ul>
+<h2 id="SpringCloud是什么"><a href="#SpringCloud是什么" class="headerlink" title="SpringCloud是什么"></a>SpringCloud是什么</h2><ul>
+<li>是微服务框架的一种落地实现</li>
+<li>是微服务所需技术的一种集合体</li>
+</ul>
+<h2 id="为什么选SpringCloud"><a href="#为什么选SpringCloud" class="headerlink" title="为什么选SpringCloud"></a>为什么选SpringCloud</h2><ul>
+<li>框架成熟度</li>
+<li>社区热度</li>
+<li>可维护性</li>
+<li>解决方案</li>
+<li>学习曲线</li>
+</ul>
+<h2 id="SpringCloud能做什么"><a href="#SpringCloud能做什么" class="headerlink" title="SpringCloud能做什么"></a>SpringCloud能做什么</h2><ul>
+<li>分布式版本控制配置</li>
+<li>服务注册与发现</li>
+<li>路由</li>
+<li>服务到服务的调用</li>
+<li>负载均衡配置</li>
+<li>断路器</li>
+<li>分布式消息管理</li>
+<li><em>~…(To Be Continue)…~</em></li>
+</ul>
+<h2 id="怎么做"><a href="#怎么做" class="headerlink" title="怎么做"></a>怎么做</h2><ul>
+<li>参考官网用例<a href="http://projects.spring.io/spring-cloud/" target="_blank" rel="noopener">http://projects.spring.io/spring-cloud/</a></li>
+<li>参考官网文档<a href="https://springcloud.cc/spring-cloud-netflix.html" target="_blank" rel="noopener">https://springcloud.cc/spring-cloud-netflix.html</a></li>
+<li>查阅官网API手册<ul>
+<li><a href="http://cloud.spring.io/spring-cloud-static/Dalston.SR1/" target="_blank" rel="noopener">http://cloud.spring.io/spring-cloud-static/Dalston.SR1/</a></li>
+<li><a href="https://springcloud.cc/spring-cloud-dalston.html" target="_blank" rel="noopener">https://springcloud.cc/spring-cloud-dalston.html</a></li>
+</ul>
+</li>
+<li>寻求社区帮助<ul>
+<li><a href="http://springcloud.cn/" target="_blank" rel="noopener">http://springcloud.cn/</a></li>
+<li><a href="https://springcloud.cc/" target="_blank" rel="noopener">https://springcloud.cc/</a></li>
+</ul>
+</li>
+<li>起步<ul>
+<li>根据尚硅谷公开课讲授内容搭建项目和抄写代码</li>
+<li>尝试触坑和测试,检查知识的理解程度</li>
+<li>完成课程代码的编写并测试通过</li>
+<li>//TODO 实战化练习</li>
+</ul>
+</li>
+</ul>
+<h2 id="学习过程"><a href="#学习过程" class="headerlink" title="学习过程"></a>学习过程</h2><ul>
+<li>环境对比<ul>
+<li>课程使用java8 + springboot1/springcloud.Dalston.SR1</li>
+<li>我使用java11 + springboot2/springcloud.Finchley.RELEASE</li>
+<li>一些不太重要的配置自行寻找合适版本</li>
+</ul>
+</li>
+<li>搭建模块化工程<ul>
+<li>Java9自带的模块化语法<ul>
+<li>未尝试</li>
+</ul>
+</li>
+<li>集成其它语言<ul>
+<li><del>我猜不使用sidecar一样可以集成</del></li>
+<li>假定现在有了一个第三方语言写的web服务</li>
+<li>新建一个SpringBoot代理项目(依赖sidecar)</li>
+<li>通过sidecar.port, sidecar.health-uri进行约定</li>
+<li>要求第三方项目的Endpoint返回规定的JSON串:{“status”:”UP”}    </li>
+<li>未尝试</li>
+</ul>
+</li>
+<li>Maven moudle<ul>
+<li>IDE配置Maven插件</li>
+<li>新建Maven-Project<ul>
+<li>父工程Pom文件中配置全局依赖</li>
+</ul>
+</li>
+<li>在Maven-Project下新建Maven-Moudle<ul>
+<li>API模块中定义Entity和ClientService等基础类和接口,作为其余模块的共同依赖</li>
+<li>Provider模块和Consumer模块实现业务代码,使用RestTemplate完成最简单的微服务</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>准备启用SpringCloud集成的功能<ul>
+<li>一般过程<ul>
+<li>在Maven中引入相关依赖</li>
+<li>在SpringBoot启动类上@Enable相关功能</li>
+<li>在yml中配置相关属性</li>
+<li>修改业务逻辑</li>
+</ul>
+</li>
+<li>哪些组件<ul>
+<li>注册中心: Eureka</li>
+<li>负载均衡: Ribbon/Feign</li>
+<li>断路器: Hystrix</li>
+<li>监控: dashboard</li>
+<li>路由: Zuul</li>
+<li>分布式配置中心: SpringCloud-Config</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>启用Eureka<ul>
+<li>Eureka是一个独立的服务,因此需要新建它</li>
+<li>pom<ul>
+<li>Eureka-Server<ul>
+<li>org.springframework.cloud</li>
+<li>spring-cloud-starter-netflix-eureka-server</li>
+</ul>
+</li>
+<li>不确定的依赖项<ul>
+<li>hystrix</li>
+<li>com.sun.xml.bind::jaxb-impl::2.1.2</li>
+</ul>
+</li>
+<li>热部署仅需devtools,不再需要springloaded</li>
+</ul>
+</li>
+<li>application.yml<ul>
+<li>server.port</li>
+<li>eureka.instance.hostname ((我不明白它的作用))</li>
+<li>eureka.client<ul>
+<li>register-with-eureka: false</li>
+<li>fetch-registry: false</li>
+<li>service-url.defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/ ((我不明白它的作用))</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>启动类<ul>
+<li>@EnableEurekaServer</li>
+</ul>
+</li>
+<li>配置完成,eureka启动正常</li>
+<li>将Provider注册到Eureka中<ul>
+<li>pom <ul>
+<li>spring-cloud-starter-netflix-eureka-client</li>
+</ul>
+</li>
+<li>application.yml<ul>
+<li>eureka.client.service-url.defaultZone: <a href="http://url_to_eureka" target="_blank" rel="noopener">http://url_to_eureka</a></li>
+<li>eureka.instance.instance-id: 修改此名称以复写eureka服务注册界面上的url显示</li>
+<li>eureka.instance.prefer-ip-address: 使用ipAddress而非hostname</li>
+</ul>
+</li>
+<li>启动类<ul>
+<li>可以不添加</li>
+<li>可以添加 @EnableEurekaClient</li>
+<li>也可以添加 @EnableDiscoveryClient</li>
+</ul>
+</li>
+<li>非必须:关于服务发现,可以在Controller中添加路径进行测试,是一种自身信息的对外展现<ul>
+<li>private DiscoveryClient client;</li>
+<li>@GetMapping(“/app_name/discovery”)</li>
+<li>// do anything</li>
+<li>return client;</li>
+</ul>
+</li>
+<li>启用actuator<ul>
+<li>actuator负责服务的信息发现,因此修改Provider项目</li>
+<li>pom添加spring-boot-starter-actuator</li>
+<li>application.yml添加info</li>
+<li>在pom的build中添加插件和命令<ul>
+<li>resources-&gt;resource-&gt;<ul>
+<li>directory-&gt;src/main/resources</li>
+<li>filtering-&gt;true</li>
+</ul>
+</li>
+<li>plugins-&gt;plugin<ul>
+<li>groupId-&gt;org.apache.maven.plugins</li>
+<li>artifactId-&gt;maven-resources-plugin<br>-configuration-&gt;delimiters-&gt;delimiter-&gt;$</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>info使用上述定义的规则(如$project.version$)动态插值</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>配置Eureka集群<ul>
+<li>修改application.yml<ul>
+<li>修改 eureka.instance.hostname 进行直观区分<ul>
+<li>学习过程中可以直接修改hosts文件来完成这件事</li>
+<li>更进一步的,可以做一个端口映射,比如我认为nginx很不错</li>
+</ul>
+</li>
+<li>修改 server.port 进行实质区分<ul>
+<li>如果有多台机器,或者不同的虚拟机实现集群,则无需修改</li>
+</ul>
+</li>
+<li>修改 eureka.client.service-url.defaultZone 使包含集群中的其它Eureka服务</li>
+</ul>
+</li>
+<li>修改provider的application.yml<ul>
+<li>修改 eureka.client.service-url.defaultZone 使包含每个Eureka服务</li>
+</ul>
+</li>
+<li>启动后发现每个服务下都挂载了另外两个服务,以及都包含provider,则说明配置成功</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>启用Ribbon<ul>
+<li>Ribbon是客户端负载均衡算法,因此修改Consumer项目</li>
+<li>pom<ul>
+<li>Eureka-Client<ul>
+<li>spring-cloud-starter-netflix-eureka-client</li>
+</ul>
+</li>
+<li>Ribbon<ul>
+<li>spring-cloud-starter-netflix-ribbon</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>application.yml<ul>
+<li>eureka.client.register-with-eureka: false # 因为消费者不提供服务</li>
+<li>eureka.client.service-url.defaultZone: [每个Eureka服务]</li>
+</ul>
+</li>
+<li>启动类<ul>
+<li>@EnableEurekaClient</li>
+</ul>
+</li>
+<li>Controller<ul>
+<li>RestTemplate访问服务者时不再采用ip:port,而是采用服务名</li>
+</ul>
+</li>
+<li>为RestTemplate的服务名解析提供支持,增加配置类ConfigBean<ul>
+<li>@Bean</li>
+<li>@LoadBalanced</li>
+<li>public RestTemplate getXXX(){return new RestTemplate();}</li>
+</ul>
+</li>
+<li>配置Provider集群测试Ribbon是否生效</li>
+<li>自定义Ribbon的均衡算法,修改ConfigBean<ul>
+<li>@Bean</li>
+<li>public IRule getXXX(){return new 算法的实现();}<ul>
+<li>此处有一个坑,即,这个算法的实现必须是一个public class</li>
+<li>虽然并不清楚原理,但是显然Spring会尝试newInstance它</li>
+<li>所以使用匿名对象,非public类的实例,会导致失败</li>
+</ul>
+</li>
+<li>公开课中提到:<ul>
+<li>使用自定义算法需要单独使用一个配置类</li>
+<li>且这个配置类不能被@ComponentScan扫描到</li>
+<li>但这个问题的出现是因为”特殊化定制”</li>
+<li>即@RibbonClient(configuration=MyConfig.class)</li>
+<li>无必要的情况下,不写configuration即可</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>启用Feign<ul>
+<li>Feign集成了Ribbon,因此拷贝一份Ribbon工程并修改</li>
+<li>pom<ul>
+<li>Feign<ul>
+<li>spring-cloud-starter-openfeign</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>启动类<ul>
+<li>@EnableFeignClients</li>
+</ul>
+</li>
+<li>修改API工程 ((因为Feign是面向接口调用))<ul>
+<li>pom添加Feign</li>
+<li>接口添加注解 @FeignClient(“服务名”)</li>
+<li>接口添加方法(参照Provider的Controller)</li>
+</ul>
+</li>
+<li>修改Controller<ul>
+<li>去掉RestTemplate</li>
+<li>添加自定义的Feign接口</li>
+<li>重新实现业务逻辑</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>启用Hystrix<ul>
+<li>Hystrix负责解决服务级联故障<ul>
+<li>服务熔断: 服务者可以处理自身的故障(可能由扇出链路引起)</li>
+<li>服务降级: 消费者可以处理服务者故障</li>
+<li>与语法上进行异常处理的区别:<ul>
+<li>Hystrix会监控调用失败的情况,并决定是否熔断和降级</li>
+<li>服务熔断后,服务者接收访问时会快返回失败信息,不再执行自身方法</li>
+<li>服务降级后,消费者准备访问时会快速返回失败信息,不再进行访问请求</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>服务熔断<ul>
+<li>针对Provider使用,拷贝并修改Provider工程</li>
+<li>在Controller中使用@HystrixCommand(fallback=”函数名”)</li>
+<li>同一个Controller下按照上述指定的函数名写一个同参同返回值的方法</li>
+<li>鉴于上述操作的复杂性和不靠谱性质,除非研究源码尝试封装它</li>
+<li>否则仅考虑在个别方法上使用即可</li>
+</ul>
+</li>
+<li>服务降级<ul>
+<li>针对Consumer使用,修改API工程</li>
+<li>修改@FeignClient注解,添加fallbackFactory=自定义Fallback处理类.class</li>
+<li>新建Fallback处理类实现FallbackFactory&lt;自定义接口&gt;接口</li>
+<li>Fallback处理类添加@Component注解</li>
+<li>重写create方法并在返回值中创建自定义接口的fallback实现</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>启用HystrixDashboard<ul>
+<li>HystrixDashboard是独立的监控服务,因此新建项目</li>
+<li>pom<ul>
+<li>hystrix-dashboard<ul>
+<li>spring-cloud-starter-netflix-hystrix-dashboard</li>
+</ul>
+</li>
+<li>hystrix<ul>
+<li>spring-cloud-starter-netflix-hystrix</li>
+<li>监控provider工程的/actuator/hystrix.stream需要此依赖</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>启动类<ul>
+<li>@EnableHystrixDashboard</li>
+</ul>
+</li>
+<li>测试和使用<ul>
+<li>在监控服务的页面上搜索想要监控的服务ip:port/actuator/hystrix.stream</li>
+<li>使被监控的服务上由hystrix管理的方法得到访问</li>
+<li>刷新监控界面获得图形信息</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>启用zuul<ul>
+<li>Zuul是独立的路由服务,因此新建项目</li>
+<li>pom<ul>
+<li>zuul<ul>
+<li>spring-cloud-starter-netflix-zuul</li>
+</ul>
+</li>
+<li>eureka<ul>
+<li>spring-cloud-starter-netflix-eureka-client</li>
+<li>路由需要注册到eureka中使用,因此依赖eureka客户端</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>application.yml<ul>
+<li>zuul.routes.mydept.serviceId: 进行路由的服务名</li>
+<li>zuul.routes.mydept.path: 进行路由的地址</li>
+<li>zuul.ignored-services: 忽略的服务名(阻止通过服务名进行访问)</li>
+</ul>
+</li>
+<li>启动类<ul>
+<li>@EnableZuulProxy</li>
+</ul>
+</li>
+<li>测试和使用<ul>
+<li>…</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>启用SpringCloud-Config<ul>
+<li>SpringCloud-Config是分布式配置中心,是一整套配置文件的解决方案</li>
+<li>新建配置中心,例如使用git仓库,创建和提交配置文件信息,格式如下<ul>
+<li>spring.profiles.active: [dev]</li>
+<li><hr>
+</li>
+<li>spring.profiles: dev &amp;&amp;正常配置</li>
+<li><hr>
+</li>
+<li>spring.profiles: test &amp;&amp; 正常配置</li>
+</ul>
+</li>
+<li>新建项目config-server<ul>
+<li>pom<ul>
+<li>spring-cloud-config-server</li>
+</ul>
+</li>
+<li>application.yml<ul>
+<li>spring.cloud.config.server.git.uri: 指定git仓库</li>
+</ul>
+</li>
+<li>启动类<ul>
+<li>@EnableConfigServer</li>
+</ul>
+</li>
+<li>测试访问<ul>
+<li>依据官网格式要求,有数种不同的请求格式,因为yml格式最适合阅读,采用这种测试</li>
+<li><a href="http://config-server/application-dev.yml" target="_blank" rel="noopener">http://config-server/application-dev.yml</a></li>
+<li><a href="http://config-server/application-test.yml" target="_blank" rel="noopener">http://config-server/application-test.yml</a></li>
+<li>其中application即配置文件的名字,最后一个-dev或者-test则是指定的profiles</li>
+<li>文件名中包含短杠并不影响访问</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>新建项目config-client<ul>
+<li>此项目用于测试配置是否能够被正常读取</li>
+<li>pom<ul>
+<li>spring-cloud-config-client</li>
+<li>spring-boot-starter-web</li>
+</ul>
+</li>
+<li>application.yml<ul>
+<li>不用写东西,或仅写一个spring.application.name</li>
+</ul>
+</li>
+<li>bootstrap.yml<ul>
+<li>关于<ul>
+<li>application是用户级资源配置项</li>
+<li>bootstrap是系统级资源配置项,加载优先级更高</li>
+<li>bootstrap属性有高优先级,默认情况下不会被本地配置覆盖</li>
+<li>既然application.yml的内容需要从远端获取,本地就使用bootstrap来保证配置分离</li>
+</ul>
+</li>
+<li>spring.cloud.config.name: 指定github上的资源名称(不含后缀)</li>
+<li>spring.cloud.config.profile</li>
+<li>spring.cloud.config.label: master</li>
+<li>spring.cloud.config.uri: 指定config-server的服务地址</li>
+</ul>
+</li>
+<li>Controller<ul>
+<li>使用@Value(“${配置项}”)注入属性</li>
+<li>写一个接口用于测试</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>参照config-client修改拷贝的其它项目</li>
+<li>测试访问</li>
+</ul>
+</li>
+</ul>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>内容来源为尚硅谷周阳老师的公开课</p>
+<p><strong>此致感谢!</strong></p>
+<hr>
+<p>项目笔记: <a href="https://gitee.com/jassor/springcloudstudy" target="_blank" rel="noopener">https://gitee.com/jassor/springcloudstudy</a></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
+                <source type="audio/mpeg" src>
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        <li title="0" data-url="http://link.hhtjim.com/163/5146554.mp3"></li>
+                    
+                        <li title="1" data-url="http://link.hhtjim.com/qq/001faIUs4M2zna.mp3"></li>
+                    
+                </ul>
+            
+        </div>
+        
+    <div id="gitalk-container" class="comment link" data-ae="false" data-ci data-cs data-r data-o data-a data-d="false">查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>
